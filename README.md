@@ -1,7 +1,9 @@
-## Getting Started
+# File classification system
+## function list
+ - 파일정보의 최종 수정 일자를 바탕으로 분류 하는 기능.
+ - 특정일자를 기준으로 현재까지 1개월 단위로 폴더를 생성하는 기능.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
+---
 ## Folder Structure
 
 The workspace contains two folders by default, where:
