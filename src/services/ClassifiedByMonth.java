@@ -57,6 +57,8 @@ public class ClassifiedByMonth {
         moveList(fileInfoList);
     }
 
+
+
     /**
      * 파일을 이동 시킨다.
      * 
@@ -127,16 +129,7 @@ public class ClassifiedByMonth {
 
         for (int i = 0; i < maxPathCnt; i++) {
             edDate = rootDate.plusMonths(i).minusDays(1);
-            pathList.add(new DirByMons(new StringBuilder()
-                                            .append(ROOT_PATH)
-                                            .append(File.separator)
-                                            .append(i + "개월 ")
-                                            .append("(")
-                                            .append(stDate == null ? "" : stDate)
-                                            .append(" ~ ")
-                                            .append(edDate)
-                                            .append(")")
-                                            .toString(), stDate, edDate, i));
+            pathList.add(new DirByMons(getDirName(stDate, edDate, i), stDate, edDate, i));
             stDate = rootDate.plusMonths(i);
         }
         System.out.println("파일 정보 생성 완료");
@@ -167,5 +160,18 @@ public class ClassifiedByMonth {
             e.printStackTrace();
         }
         return result;
+    }
+
+    private static String getDirName(LocalDate stDate, LocalDate edDate, int i){
+        return new StringBuilder()
+                    .append(ROOT_PATH)
+                    .append(File.separator)
+                    .append(i + "개월 ")
+                    .append("(")
+                    .append(stDate == null ? "" : stDate)
+                    .append(" ~ ")
+                    .append(edDate)
+                    .append(")")
+                    .toString();
     }
 }
