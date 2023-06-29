@@ -25,8 +25,8 @@ import util.LocalDateUtils;
  */
 public class ClassifiedByMonth {
 
-    private static String ROOT_PATH = "C:\\test1";
-    private static String IMAGE_ROOT_PATH = "C:\\test2";
+    private static String ROOT_PATH = "D:\\test1";
+    private static String IMAGE_ROOT_PATH = "D:\\test2";
     private static int DATE_YEAR = 2021;
     private static int DATE_MON = 8;
     private static int DATE_DAY = 13;
@@ -44,7 +44,7 @@ public class ClassifiedByMonth {
         }
 
         // 파일 목록 생성.
-        List<Path> fielList = Files.list(Paths.get(IMAGE_ROOT_PATH)).toList();
+        List<Path> fielList = Files.list(Paths.get(IMAGE_ROOT_PATH)).collect(Collectors.toList());
         if (fielList.size() < 1) {
             System.out.println("대상 파일이 없습니다.");
             return;
